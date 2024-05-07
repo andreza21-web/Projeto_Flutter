@@ -1,4 +1,7 @@
 
+import 'dart:convert';
+import 'dart:io';
+
 int calculate() {
   return 6 * 7;
 }
@@ -33,20 +36,12 @@ void listType() {
 
 
 void calculateValue ( ){
-  // print("Informe a primeira nota");
-  // var line1 = stdin.readLineSync(encoding: utf8);
-  // var prova1 = int.parse(line1 == null ? "0" : line1);
-
-  // print("Informe a segunda nota");
-  // var line2 = stdin.readLineSync(encoding: utf8);
-  // var prova2 = int.parse(line2 == null ? "0" : line2);
-
-  // var media = (prova1 + prova2) / 2;
-  // if(media >= 7){
-  //   print("o aluno passou com a nota $media");
-  // }else if(media >= 5){
-  //   print("o aluno esta de recuperação com a nota $media");
-  // }else{
-  //   print("o aluno reprovou com a nota $media");
-  // }
+  print("Digite um numero");
+  var line = stdin.readLineSync(encoding: utf8);
+  try {
+    double numero = double.parse(line ?? "");
+    print(numero);
+  } catch (e) {
+    print("Numero invalido: $line");
+  }
 }
